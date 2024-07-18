@@ -9,27 +9,27 @@
   </head>
 
   <body>
-    <h1>Sample To Do Application<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAk1BMVEUyp9gjruYjruUjr+cjr+Yir+ZHcEwjGBUjGBUjFxQiFxQjGBUjICEjGBUiFxQjGBUjGBUjruYjGBUjGBUjFRIjGBUhFhQjruYjsOgjGBUjruUjGBUkruU2r+IjFxQjGBUiFxQjFxRlcn5BcYtEncY/SVEjruUjDQw5ia8jGBUhYn4jGBUjGBUjruU7P0UjruVVbX6TLW0yAAAAMXRSTlMQffT7uCAAM8n/0mIHfu2nIP8Y5Uu0Cuk3b0s+0v+Q+ypYO+3//5SJ+fWNkb1TnGHYDCcn8AAAAX9JREFUeAFl0weSgzAMBVATHIEoBpHee6/3P90ayWwSo2lC8/hDsZQKOqHuglQUY5K6PssNFiWogIhCLbOqh7b6wJXX/WCoRmSrM+bZBHkoOOGLSIUMpp+bMOa+bICuwUjxcMazXB5hUPe9UnXnCyINUstVfZP0axthNqBgu9vzM3AVFhSurxAnYMHaHBZ0dMOTBatS+gxxIwDP/xFLXF2waIFryBEMkgGayAd9TaQciPsXvPlgMyaO4AQYIFY+AE2jrgNZhDbCB9MOHR0Y2giz9oGLEGCf4tQC9imCBmR37JU+gDmFSgD/k2ULTDlCAMSImQ+Upnm3AX3E3AfwCClwQJ7CBzCnUeYAbFY4AQ/wU5wcyGIb4QGOeAqQp2iBF4W7BkAPTQsoTfuDAI5wIDKYQhNB57eSvopRjlx9Ni8bJ0ZEC+3EBOXQ3rFuKp6Nqa6A+6xwx36Fti6ybgGD+e/iGAazL6B/V4/X7Q5csqjT3+Ud5mZVVCA1ntP89bv+fz02MVpMFvOPAAAAAElFTkSuQmCC" alt="INIADのロゴ"></h1>
-    <p>You can submit tasks from the following form.</p>
+    <h1>To Do アプリ<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAk1BMVEUyp9gjruYjruUjr+cjr+Yir+ZHcEwjGBUjGBUjFxQiFxQjGBUjICEjGBUiFxQjGBUjGBUjruYjGBUjGBUjFRIjGBUhFhQjruYjsOgjGBUjruUjGBUkruU2r+IjFxQjGBUiFxQjFxRlcn5BcYtEncY/SVEjruUjDQw5ia8jGBUhYn4jGBUjGBUjruU7P0UjruVVbX6TLW0yAAAAMXRSTlMQffT7uCAAM8n/0mIHfu2nIP8Y5Uu0Cuk3b0s+0v+Q+ypYO+3//5SJ+fWNkb1TnGHYDCcn8AAAAX9JREFUeAFl0weSgzAMBVATHIEoBpHee6/3P90ayWwSo2lC8/hDsZQKOqHuglQUY5K6PssNFiWogIhCLbOqh7b6wJXX/WCoRmSrM+bZBHkoOOGLSIUMpp+bMOa+bICuwUjxcMazXB5hUPe9UnXnCyINUstVfZP0axthNqBgu9vzM3AVFhSurxAnYMHaHBZ0dMOTBatS+gxxIwDP/xFLXF2waIFryBEMkgGayAd9TaQciPsXvPlgMyaO4AQYIFY+AE2jrgNZhDbCB9MOHR0Y2giz9oGLEGCf4tQC9imCBmR37JU+gDmFSgD/k2ULTDlCAMSImQ+Upnm3AX3E3AfwCClwQJ7CBzCnUeYAbFY4AQ/wU5wcyGIb4QGOeAqQp2iBF4W7BkAPTQsoTfuDAI5wIDKYQhNB57eSvopRjlx9Ni8bJ0ZEC+3EBOXQ3rFuKp6Nqa6A+6xwx36Fti6ybgGD+e/iGAazL6B/V4/X7Q5csqjT3+Ud5mZVVCA1ntP89bv+fz02MVpMFvOPAAAAAElFTkSuQmCC" alt="INIADのロゴ"></h1>
+     <p>以下のフォームからタスクを送信できます。</p>
     <form action="{% url 'index' %}" method="post">
       {% csrf_token %}
       <div>
-        <label for="titleInput">Title</label><br>
-        <input id="titleInput" name="title" type="text" placeholder="Input title">
+        <label for="titleInput">タイトル</label><br>
+        <input id="titleInput" name="title" type="text" placeholder="タイトルを入力">
       </div>
       <div>
-        <label for="dueInput">Due at:</label><br>
+        <label for="dueInput">期限:</label><br>
         <input id="dueInput" name="due_at" type="datetime-local">
       </div>
       <div>
-        <button type="submit">Submit</button>
+        <button type="submit">投稿</button>
       </div>
     </form>
     <br>
 
     <div>
-      <a href="{% url 'index' %}?order=due">Sort by Due Date</a> |
-      <a href="{% url 'index' %}?order=post">Sort by Posted Date</a>
+      <a href="{% url 'index' %}?order=due">期限順に並べ替える</a> |
+      <a href="{% url 'index' %}?order=post">投稿日順に並べ替える</a>
     </div>
 
     {% for task in tasks %}
