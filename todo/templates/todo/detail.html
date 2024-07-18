@@ -3,7 +3,7 @@
 <html lang="ja">
 
   <head>
-    <title>To Do Application</title>
+    <title>To Do アプリ</title>
     <meta charset="UTF-8">
     <meta name="author" content="INIAD">
   </head>
@@ -23,10 +23,10 @@
     </ul>
 
     <div>
-      <a href="{% url 'index' %}">Top</a>
-      | <a href="{% url 'update' task.id %}">Edit</a>
-      | <a href="{% url 'delete' task.id %}">Delete</a>
-      | <a href="{% url 'close' task.id %}">Close</a>
+      <a href="{% url 'index' %}">トップページに戻る</a>
+      | <a href="{% url 'update' task.id %}">編集</a>
+      | <a href="{% url 'delete' task.id %}">削除</a>
+      | <a href="{% url 'close' task.id %}">終了</a>
     </div>
   </body>
 
